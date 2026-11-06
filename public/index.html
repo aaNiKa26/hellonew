@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b1020" />
+  <title>Flowboard — Your work, in focus</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <script defer src="/app.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="/"><span class="brand-icon">F</span><span>flowboard<span class="brand-dot">.</span></span></a>
+      <div class="side-label">WORKSPACE</div>
+      <div class="nav-active"><span>▦</span> Overview</div>
+      <div class="side-info"><div class="info-icon">✦</div><strong>Made for momentum</strong><p>A lightweight project dashboard built with Node.js, Express and MySQL.</p></div>
+      <div class="side-bottom"><span class="online-dot"></span> CyberPanel-ready starter <small>v1.0</small></div>
+    </aside>
+    <main>
+      <header class="topbar"><span>Workspace <span class="crumb">/</span> Overview</span><span class="top-pill"><span class="online-dot"></span><span id="db-status">Checking database...</span></span></header>
+      <div class="content">
+        <div class="hero"><div class="hero-kicker">YOUR PERSONAL COMMAND CENTER</div><h1>Make room for<br/><em>great work.</em></h1><p>Stay organized, keep the ideas flowing, and get the right things done. All from one simple workspace.</p><a href="#new-task" class="hero-link">Create your first task <span>↗</span></a><span class="orb orb-one"></span><span class="orb orb-two"></span></div>
+        <section class="stats" aria-label="Task statistics"><div class="stat"><span>Total tasks</span><strong id="stat-total">—</strong><small>All your work</small></div><div class="stat"><span>To do</span><strong id="stat-todo">—</strong><small>Ready to tackle</small></div><div class="stat"><span>In progress</span><strong id="stat-progress">—</strong><small>Keep it moving</small></div><div class="stat"><span>Completed</span><strong id="stat-done">—</strong><small>Nice work!</small></div></section>
+        <section class="workspace" id="new-task"><div class="section-head"><div><div class="eyebrow">YOUR WORKSPACE</div><h2>Tasks & projects</h2><p>Everything you need to keep moving forward.</p></div><span class="task-count" id="task-count">0 tasks</span></div>
+          <form id="task-form" class="create-task"><div class="form-heading"><span class="plus-icon">+</span><strong>Add a new task</strong></div><div class="fields"><label><span>Task title</span><input id="title" name="title" type="text" maxlength="160" required placeholder="e.g. Launch my new website" /></label><label><span>Description <small>(optional)</small></span><input id="description" name="description" type="text" maxlength="500" placeholder="A little context goes a long way" /></label></div><div class="form-actions"><span>Small steps. Big progress.</span><button type="submit" id="add-button">+ &nbsp; Add task</button></div></form>
+          <div class="list-head"><h3>Your tasks</h3><div class="filters" role="group" aria-label="Filter tasks"><button type="button" class="filter active" data-filter="all">All</button><button type="button" class="filter" data-filter="todo">To do</button><button type="button" class="filter" data-filter="in_progress">In progress</button><button type="button" class="filter" data-filter="done">Done</button></div></div>
+          <div id="message" class="message" role="status" aria-live="polite"></div><div id="task-list" class="task-list"><div class="empty">Loading tasks...</div></div>
+        </section><footer>Built with <strong>Node.js + Express + MySQL</strong> · Deploy on CyberPanel with OpenLiteSpeed</footer>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

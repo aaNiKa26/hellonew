@@ -1,0 +1,20 @@
+[Unit]
+Description=Flowboard Express Application
+After=network.target mariadb.service
+
+[Service]
+Type=simple
+User=flowboard
+Group=flowboard
+WorkingDirectory=/opt/flowboard
+Environment=NODE_ENV=production
+EnvironmentFile=/opt/flowboard/.env
+ExecStart=/usr/bin/node /opt/flowboard/server.js
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+
+[Install]
+WantedBy=multi-user.target
